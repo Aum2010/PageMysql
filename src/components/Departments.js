@@ -19,6 +19,19 @@ export default function Departments() {
         
     }, [])
 
+    // const postTo = () => {
+    //     axios({
+    //         method : 'post',
+    //         url: 'http://192.168.1.50:5000/value',
+    //         data : {
+    //           title : 'New Todo'
+    //         }
+    //       }).then(res => {
+    //               console.log(res)
+    //               console.log(res.data)
+    //           }).catch((err) => {console.log(err)})
+    // } forTest
+
     return (
         <div>
             <br></br>
@@ -57,7 +70,8 @@ export default function Departments() {
             </div>
 
             <br></br>
-           
+            
+                {/* <Button onClick={() => postTo()}>Test</Button>  ForTest*/}
             
 
                     <AddDepart

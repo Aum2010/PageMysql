@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function AddDepart(props) {
   
   const [depart_name, seTdepart_name] = useState('')
+
+  
   
   const handleSubmit = () => {
       
@@ -22,6 +24,17 @@ export default function AddDepart(props) {
         //       console.log(res.data)
         //   }).catch((err) => {console.log(err)})
 
+        axios({
+          method : 'post',
+          url: 'http://192.168.1.50:5000/value',
+          data : {
+            title : {depart_name}
+          }
+        }).then(res => {
+                console.log(res)
+                console.log(res.data)
+            }).catch((err) => {console.log(err)})
+
   }
 
     return (
@@ -38,9 +51,9 @@ export default function AddDepart(props) {
       </Modal.Header>
       <Modal.Body>
         
-            {/* <Row>
+            <Row>
                 <Col>
-                    <Form onSubmit={() => handleSubmit}>
+                    <Form onSubmit={() => handleSubmit()}>
                         <Form.Group controlId="DepartmentName" >
                            <Form.Label>DepartmentName</Form.Label>
                             
@@ -58,7 +71,7 @@ export default function AddDepart(props) {
                         <Button type="submit">Save</Button>
                     </Form>
                 </Col>
-            </Row> */}
+            </Row>
         
 
       </Modal.Body>
