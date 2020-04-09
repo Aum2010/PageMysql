@@ -17,12 +17,13 @@ function App() {
           <div>
 
             <Navigation/>
-
+            
             <Switch>
               <Route path="/" exact> <Home/> </Route>
               <Route path="/em"> <Employee/> </Route>
               <Route path="/de"> <Departments/> </Route>
             </Switch>
+            
           </div>
       </BrowserRouter>
   );

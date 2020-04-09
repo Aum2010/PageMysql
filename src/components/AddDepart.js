@@ -1,9 +1,29 @@
-import React from 'react'
-import { Button ,Modal} from 'react-bootstrap'
-
-
+import React , {useState} from 'react'
+import { Button ,Modal ,Row ,Col, Form} from 'react-bootstrap'
+import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function AddDepart(props) {
-    
+  
+  const [depart_name, seTdepart_name] = useState('')
+  
+  const handleSubmit = () => {
+      
+
+      // const Tosend = {
+      //     method : 'post',
+      //     url : 'http://192.168.1.50:5000/value',
+      //     data : 1,
+      //     'Content-Type': 'application/json',
+      // }
+
+        // axios.post('http://192.168.1.50:5000/value' , { name : "RRRR"})
+        //   .then(res => {
+        //       console.log(res)
+        //       console.log(res.data)
+        //   }).catch((err) => {console.log(err)})
+
+  }
+
     return (
       <Modal
       {...props}
@@ -11,18 +31,36 @@ export default function AddDepart(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header className ='closeButton'>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Adding Department
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        
+            {/* <Row>
+                <Col>
+                    <Form onSubmit={() => handleSubmit}>
+                        <Form.Group controlId="DepartmentName" >
+                           <Form.Label>DepartmentName</Form.Label>
+                            
+                            <Form.Control value={depart_name} 
+                                        type="text"
+                                        required 
+                                        placeholder="departmentname" 
+                                        onChange={(event) => seTdepart_name(event.target.value)}>
+                            </Form.Control>
+                              
+                            
+                            <p>#debug : {depart_name}</p>
+
+                        </Form.Group>
+                        <Button type="submit">Save</Button>
+                    </Form>
+                </Col>
+            </Row> */}
+        
+
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>

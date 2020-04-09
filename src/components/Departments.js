@@ -9,6 +9,7 @@ import AddDepart from './AddDepart'
 export default function Departments() {
     const [dataValue, setDataValue] = useState([])
     const [modalShow, setModalShow] = useState(false);
+    
     useEffect(() => {
         axios.get('http://192.168.1.50:5000/value').then((res) => {
             const {data} = res
